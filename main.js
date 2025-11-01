@@ -19,26 +19,46 @@ window.addEventListener('load', () => {
 const cursor = document.querySelector('.cursor');
 const cursorFollower = document.querySelector('.cursor-follower');
 
+let mouseX = 0, mouseY = 0;
+let cursorX = 0, cursorY = 0;
+let followerX = 0, followerY = 0;
+
 document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-    
-    setTimeout(() => {
-        cursorFollower.style.left = e.clientX + 'px';
-        cursorFollower.style.top = e.clientY + 'px';
-    }, 100);
+    mouseX = e.clientX;
+    mouseY = e.clientY;
 });
 
+// Smooth cursor animation
+function animateCursor() {
+    // Main cursor follows immediately
+    cursorX += (mouseX - cursorX) * 0.9;
+    cursorY += (mouseY - cursorY) * 0.9;
+    cursor.style.left = cursorX + 'px';
+    cursor.style.top = cursorY + 'px';
+    
+    // Follower has delay
+    followerX += (mouseX - followerX) * 0.1;
+    followerY += (mouseY - followerY) * 0.1;
+    cursorFollower.style.left = followerX + 'px';
+    cursorFollower.style.top = followerY + 'px';
+    
+    requestAnimationFrame(animateCursor);
+}
+
+animateCursor();
+
 // Cursor hover effects
-document.querySelectorAll('a, button, .project-card, .social-link').forEach(element => {
+document.querySelectorAll('a, button, .project-card, .social-link, .btn').forEach(element => {
     element.addEventListener('mouseenter', () => {
-        cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
-        cursorFollower.style.transform = 'translate(-50%, -50%) scale(1.5)';
+        cursor.style.transform = 'translate(-50%, -50%) scale(2)';
+        cursorFollower.style.transform = 'translate(-50%, -50%) scale(2)';
+        cursor.style.background = '#ec4899';
     });
     
     element.addEventListener('mouseleave', () => {
         cursor.style.transform = 'translate(-50%, -50%) scale(1)';
         cursorFollower.style.transform = 'translate(-50%, -50%) scale(1)';
+        cursor.style.background = '#6366f1';
     });
 });
 
@@ -423,7 +443,7 @@ document.querySelectorAll('img[data-src]').forEach(img => {
 });
 
 // ===================================
-// Project Card Tilt Effect
+// Project Card 3D Tilt Effect
 // ===================================
 
 const projectCards = document.querySelectorAll('.project-card');
@@ -437,15 +457,36 @@ projectCards.forEach(card => {
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
         
-        const rotateX = (y - centerY) / 20;
-        const rotateY = (centerX - x) / 20;
+        const rotateX = (y - centerY) / 15;
+        const rotateY = (centerX - x) / 15;
         
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-15px) scale(1.02)`;
     });
     
     card.addEventListener('mouseleave', () => {
-        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0) scale(1)';
     });
+});
+
+// Add parallax to card images
+projectCards.forEach(card => {
+    const image = card.querySelector('.project-image');
+    if (image) {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const moveX = (x - rect.width / 2) / 20;
+            const moveY = (y - rect.height / 2) / 20;
+            
+            image.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            image.style.transform = 'translate(0, 0)';
+        });
+    }
 });
 
 // ===================================
@@ -468,10 +509,11 @@ const createScrollProgress = () => {
         position: fixed;
         top: 0;
         left: 0;
-        height: 3px;
-        background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+        height: 4px;
+        background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
         z-index: 9999;
         transition: width 0.1s ease;
+        box-shadow: 0 0 20px rgba(99, 102, 241, 0.6);
     `;
     document.body.appendChild(progressBar);
     
