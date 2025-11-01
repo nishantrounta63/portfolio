@@ -187,21 +187,25 @@ if (typeof particlesJS !== 'undefined') {
     particlesJS('particles-js', {
         particles: {
             number: {
-                value: 80,
+                value: 100,
                 density: {
                     enable: true,
                     value_area: 800
                 }
             },
             color: {
-                value: '#6366f1'
+                value: ['#6366f1', '#8b5cf6', '#ec4899']
             },
             shape: {
-                type: 'circle'
+                type: ['circle', 'triangle'],
+                stroke: {
+                    width: 0,
+                    color: '#000000'
+                }
             },
             opacity: {
-                value: 0.5,
-                random: false,
+                value: 0.6,
+                random: true,
                 anim: {
                     enable: true,
                     speed: 1,
@@ -210,11 +214,11 @@ if (typeof particlesJS !== 'undefined') {
                 }
             },
             size: {
-                value: 3,
+                value: 4,
                 random: true,
                 anim: {
                     enable: true,
-                    speed: 2,
+                    speed: 3,
                     size_min: 0.1,
                     sync: false
                 }
@@ -228,12 +232,17 @@ if (typeof particlesJS !== 'undefined') {
             },
             move: {
                 enable: true,
-                speed: 2,
+                speed: 3,
                 direction: 'none',
-                random: false,
+                random: true,
                 straight: false,
                 out_mode: 'out',
-                bounce: false
+                bounce: false,
+                attract: {
+                    enable: true,
+                    rotateX: 600,
+                    rotateY: 1200
+                }
             }
         },
         interactivity: {
@@ -241,20 +250,31 @@ if (typeof particlesJS !== 'undefined') {
             events: {
                 onhover: {
                     enable: true,
-                    mode: 'grab'
+                    mode: ['grab', 'bubble']
                 },
                 onclick: {
                     enable: true,
-                    mode: 'push'
+                    mode: 'repulse'
                 },
                 resize: true
             },
             modes: {
                 grab: {
-                    distance: 140,
+                    distance: 200,
                     line_linked: {
-                        opacity: 1
+                        opacity: 0.8
                     }
+                },
+                bubble: {
+                    distance: 250,
+                    size: 8,
+                    duration: 2,
+                    opacity: 0.8,
+                    speed: 3
+                },
+                repulse: {
+                    distance: 200,
+                    duration: 0.4
                 },
                 push: {
                     particles_nb: 4
@@ -737,7 +757,123 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         document.body.classList.add('loaded');
     }, 100);
+    
+    // Add magnetic effect to buttons
+    addMagneticEffect();
+    
+    // Add text reveal animation
+    addTextReveal();
+    
+    // Add floating elements
+    createFloatingElements();
 });
+
+// ===================================
+// Magnetic Button Effect
+// ===================================
+
+function addMagneticEffect() {
+    const magneticElements = document.querySelectorAll('.btn, .social-link, .nav-link');
+    
+    magneticElements.forEach(element => {
+        element.addEventListener('mousemove', (e) => {
+            const rect = element.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            
+            element.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+        });
+        
+        element.addEventListener('mouseleave', () => {
+            element.style.transform = 'translate(0, 0)';
+        });
+    });
+}
+
+// ===================================
+// Text Reveal Animation
+// ===================================
+
+function addTextReveal() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const text = entry.target;
+                const words = text.textContent.split(' ');
+                text.innerHTML = '';
+                
+                words.forEach((word, index) => {
+                    const span = document.createElement('span');
+                    span.textContent = word + ' ';
+                    span.style.opacity = '0';
+                    span.style.display = 'inline-block';
+                    span.style.animation = `fadeInUp 0.6s ease forwards ${index * 0.1}s`;
+                    text.appendChild(span);
+                });
+                
+                observer.unobserve(text);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    document.querySelectorAll('.section-subtitle').forEach(el => observer.observe(el));
+}
+
+// ===================================
+// Floating Elements
+// ===================================
+
+function createFloatingElements() {
+    const container = document.createElement('div');
+    container.className = 'floating-shapes';
+    container.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+        overflow: hidden;
+    `;
+    
+    for (let i = 0; i < 15; i++) {
+        const shape = document.createElement('div');
+        const size = Math.random() * 100 + 50;
+        const colors = ['#6366f1', '#8b5cf6', '#ec4899'];
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        
+        shape.style.cssText = `
+            position: absolute;
+            width: ${size}px;
+            height: ${size}px;
+            background: ${color};
+            opacity: 0.05;
+            border-radius: ${Math.random() > 0.5 ? '50%' : '0'};
+            top: ${Math.random() * 100}%;
+            left: ${Math.random() * 100}%;
+            animation: floatShape ${10 + Math.random() * 20}s linear infinite;
+            transform: rotate(${Math.random() * 360}deg);
+        `;
+        
+        container.appendChild(shape);
+    }
+    
+    document.body.appendChild(container);
+    
+    // Add CSS animation
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes floatShape {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(100px, -100px) rotate(90deg); }
+            50% { transform: translate(200px, 0) rotate(180deg); }
+            75% { transform: translate(100px, 100px) rotate(270deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
+        }
+    `;
+    document.head.appendChild(style);
+}
 
 // ===================================
 // Export functions for testing (optional)
@@ -752,3 +888,47 @@ if (typeof module !== 'undefined' && module.exports) {
         trackEvent
     };
 }
+
+// ===================================
+// Enhanced Scroll Effects
+// ===================================
+
+let lastScrollTop = 0;
+
+window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    // Hide/show navbar on scroll
+    if (scrollTop > lastScrollTop && scrollTop > 100) {
+        navbar.style.transform = 'translateY(-100%)';
+    } else {
+        navbar.style.transform = 'translateY(0)';
+    }
+    
+    lastScrollTop = scrollTop;
+}, { passive: true });
+
+// Add smooth transition to navbar
+navbar.style.transition = 'transform 0.3s ease';
+
+// ===================================
+// Interactive Stat Numbers
+// ===================================
+
+document.querySelectorAll('.stat-number').forEach(stat => {
+    stat.addEventListener('mouseenter', () => {
+        const currentValue = parseInt(stat.textContent);
+        let count = 0;
+        const increment = currentValue / 20;
+        
+        const counter = setInterval(() => {
+            count += increment;
+            if (count >= currentValue) {
+                stat.textContent = currentValue + '+';
+                clearInterval(counter);
+            } else {
+                stat.textContent = Math.ceil(count);
+            }
+        }, 50);
+    });
+});
