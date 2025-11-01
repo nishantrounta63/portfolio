@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nishant Rounte - Data Analyst & Fullstack Developer Portfolio">
+    <title>Nishant Rounte | Data Analyst & Fullstack Developer</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <div class="loader-inner">
+                <div class="loader-line-wrap">
+                    <div class="loader-line"></div>
+                </div>
+                <div class="loader-line-wrap">
+                    <div class="loader-line"></div>
+                </div>
+                <div class="loader-line-wrap">
+                    <div class="loader-line"></div>
+                </div>
+                <div class="loader-line-wrap">
+                    <div class="loader-line"></div>
+                </div>
+                <div class="loader-line-wrap">
+                    <div class="loader-line"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo" data-aos="fade-right">
+                <span class="logo-text">NR</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#achievements" class="nav-link">Achievements</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-background">
+            <div class="particles" id="particles-js"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text" data-aos="fade-up">
+                <h1 class="hero-title">
+                    Hi, I'm <span class="gradient-text typed-name">Nishant Rounte</span>
+                </h1>
+                <div class="hero-subtitle">
+                    <span class="typing-text"></span>
+                    <span class="cursor-blink">|</span>
+                </div>
+                <p class="hero-description" data-aos="fade-up" data-aos-delay="200">
+                    Aspiring Data Analyst & Fullstack Developer with strong expertise in SQL, Excel, Power BI, and MERN stack. 
+                    Passionate about transforming data into actionable insights and building scalable web applications.
+                </p>
+                <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400">
+                    <a href="#contact" class="btn btn-primary">
+                        <span>Get In Touch</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#projects" class="btn btn-secondary">
+                        <span>View Projects</span>
+                        <i class="fas fa-folder-open"></i>
+                    </a>
+                </div>
+                <div class="social-links" data-aos="fade-up" data-aos-delay="600">
+                    <a href="https://linkedin.com" target="_blank" class="social-link" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com" target="_blank" class="social-link" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:nishantrounta63@gmail.com" class="social-link" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="tel:+919518608693" class="social-link" title="Phone">
+                        <i class="fas fa-phone"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image" data-aos="fade-left" data-aos-delay="200">
+                <div class="image-wrapper">
+                    <div class="glow-effect"></div>
+                    <div class="profile-pic">
+                        <div class="profile-icon">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <p>Scroll Down</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <h3>Introduction</h3>
+                    <p>
+                        I'm an aspiring <strong>Data Analyst</strong> and <strong>Fullstack Developer</strong> with a passion for 
+                        leveraging data to drive meaningful insights and building robust web applications.
+                    </p>
+                    <p>
+                        With strong expertise in SQL, Excel, Power BI, and the MERN stack, I specialize in creating 
+                        interactive dashboards, scalable web solutions, and database-driven applications. My approach 
+                        combines analytical thinking with creative problem-solving to deliver impactful results.
+                    </p>
+                    <div class="about-info">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span><strong>Location:</strong> Yamuna Nagar, Haryana, India</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span><strong>Email:</strong> nishantrounta63@gmail.com</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <span><strong>Phone:</strong> +91-9518608693</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-stats" data-aos="fade-left">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <h4 class="stat-number" data-count="4">0</h4>
+                        <p class="stat-label">Projects Completed</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h4 class="stat-number" data-count="4">0</h4>
+                        <p class="stat-label">Certifications</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h4 class="stat-number" data-count="10">0</h4>
+                        <p class="stat-label">Technologies</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h4 class="stat-number" data-count="2">0</h4>
+                        <p class="stat-label">Achievements</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Work <span class="gradient-text">Experience</span></h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">May 2024 – July 2024</span>
+                        <h3>Machine Learning Training</h3>
+                        <h4>TECHLIVE SOLUTION</h4>
+                        <p class="timeline-location">
+                            <i class="fas fa-map-marker-alt"></i> Chandigarh, India
+                        </p>
+                        <p class="timeline-description">
+                            Completed intensive training in Machine Learning with Python, covering supervised and unsupervised learning, 
+                            model evaluation, and practical implementation of ML algorithms for real-world problems.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">My <span class="gradient-text">Education</span></h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="education-grid">
+                <div class="education-card" data-aos="flip-left">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <span class="education-date">Sep 2021 - Sep 2025</span>
+                    <h3>BTech in Computer Science</h3>
+                    <h4>University Institute of Engineering and Technology</h4>
+                    <p class="education-location">
+                        <i class="fas fa-map-marker-alt"></i> Kurukshetra, India
+                    </p>
+                    <div class="education-grade">
+                        <span class="grade-label">GPA:</span>
+                        <span class="grade-value">7.2/10</span>
+                    </div>
+                </div>
+                <div class="education-card" data-aos="flip-right">
+                    <div class="education-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <span class="education-date">April 2020</span>
+                    <h3>Senior Secondary Education</h3>
+                    <h4>Mukand Lal National Senior Secondary School</h4>
+                    <p class="education-location">
+                        <i class="fas fa-map-marker-alt"></i> Yamuna Nagar, India
+                    </p>
+                    <div class="education-grade">
+                        <span class="grade-label">Percentage:</span>
+                        <span class="grade-value">82%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+                <div class="title-underline"></div>
+                <p class="section-subtitle">Explore my latest work in Data Analytics and Web Development</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" data-aos="zoom-in">
+                    <div class="project-image">
+                        <div class="project-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="https://github.com" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Power BI Dashboard – Mobile Sales</h3>
+                            <span class="project-badge">Data Analytics</span>
+                        </div>
+                        <p class="project-description">
+                            Designed an interactive dashboard analyzing regional sales performance, brand-wise trends, and KPIs. 
+                            Applied DAX, slicers, filters, and measures to deliver actionable insights.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Power BI</span>
+                            <span class="tag">DAX</span>
+                            <span class="tag">Data Visualization</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="project-image">
+                        <div class="project-icon">
+                            <i class="fas fa-file-excel"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="https://github.com" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Excel Dashboard – Hospital Emergency Room</h3>
+                            <span class="project-badge">Data Analytics</span>
+                        </div>
+                        <p class="project-description">
+                            Built an Excel-based dashboard for tracking patient inflow, admission rate, and wait times. 
+                            Used Pivot Tables, Power Query, and Data Cleaning for effective reporting.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Excel</span>
+                            <span class="tag">Pivot Tables</span>
+                            <span class="tag">Power Query</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="project-image">
+                        <div class="project-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="https://github.com" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>SQL Project – Book Store Management</h3>
+                            <span class="project-badge">Database</span>
+                        </div>
+                        <p class="project-description">
+                            Designed and optimized a relational database schema for bookstore operations. 
+                            Implemented stored procedures, triggers, and indexing for efficient reporting.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">SQL</span>
+                            <span class="tag">Database Design</span>
+                            <span class="tag">Optimization</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="project-image">
+                        <div class="project-icon">
+                            <i class="fas fa-film"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="https://github.com" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Movie Recommendation System</h3>
+                            <span class="project-badge">Machine Learning</span>
+                        </div>
+                        <p class="project-description">
+                            Built a recommendation system using collaborative filtering and content-based techniques. 
+                            Preprocessed large datasets with Pandas and NumPy for feature engineering.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Scikit-learn</span>
+                            <span class="tag">Pandas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Technical <span class="gradient-text">Skills</span></h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="skills-content">
+                <div class="skills-category" data-aos="fade-right">
+                    <h3><i class="fas fa-code"></i> Programming Languages</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Python</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>JavaScript</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>HTML & CSS</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>C++</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="75"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-category" data-aos="fade-left">
+                    <h3><i class="fas fa-brain"></i> Expertise Areas</h3>
+                    <div class="expertise-grid">
+                        <div class="expertise-card">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Data Analytics</span>
+                        </div>
+                        <div class="expertise-card">
+                            <i class="fas fa-robot"></i>
+                            <span>Machine Learning</span>
+                        </div>
+                        <div class="expertise-card">
+                            <i class="fas fa-laptop-code"></i>
+                            <span>Fullstack Development</span>
+                        </div>
+                        <div class="expertise-card">
+                            <i class="fas fa-database"></i>
+                            <span>Data Science</span>
+                        </div>
+                        <div class="expertise-card">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>Data Structures</span>
+                        </div>
+                        <div class="expertise-card">
+                            <i class="fas fa-code-branch"></i>
+                            <span>Algorithms</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-category" data-aos="fade-up">
+                    <h3><i class="fas fa-tools"></i> Technologies & Tools</h3>
+                    <div class="tech-cloud">
+                        <span class="tech-tag" data-aos="zoom-in" data-aos-delay="0">NumPy</span>
+                        <span class="tech-tag" data-aos="zoom-in" data-aos-delay="50">Matplotlib</span>
+                        <span class="tech-tag" data-aos="zoom-in" data-aos-delay="100">Pandas</span>
+                        <span class="tech-tag" data-aos="zoom-in" data-aos-delay="150">SQL</span>
+                        <span class="tech-tag" data-aos="zoom-in" data-aos-delay="200">Excel</span>
+                        <span class="tech-tag" data-aos="zoom-in" data-aos-delay="250">Power BI</span>
+                        <span class="tech-tag" data-aos="zoom-in" data-aos-delay="300">Node.js</span>
+                        <span class="tech-tag" data-aos="zoom-in" data-aos-delay="350">React.js</span>
+                        <span class="tech-tag" data-aos="zoom-in" data-aos-delay="400">Express.js</span>
+                        <span class="tech-tag" data-aos="zoom-in" data-aos-delay="450">MongoDB</span>
+                        <span class="tech-tag" data-aos="zoom-in" data-aos-delay="500">Git</span>
+                        <span class="tech-tag" data-aos="zoom-in" data-aos-delay="550">GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="achievements-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Achievements & <span class="gradient-text">Leadership</span></h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="achievements-grid">
+                <div class="achievement-card" data-aos="fade-up">
+                    <div class="achievement-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <span class="achievement-date">September 2023 - October 2023</span>
+                        <h3>Member of Discipline Committee</h3>
+                        <h4>Excelsior</h4>
+                        <p>Established rules and regulations as per disciplinary requirements, ensuring smooth event management and maintaining order.</p>
+                    </div>
+                </div>
+                <div class="achievement-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="achievement-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <span class="achievement-date">December 2022 - Present</span>
+                        <h3>Core Member</h3>
+                        <h4>Hail Jarvis UIET Social Club</h4>
+                        <p>Organized various social activities impacting local communities positively, fostering community engagement and social responsibility.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">My <span class="gradient-text">Certifications</span></h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="certifications-grid">
+                <div class="cert-card" data-aos="flip-up">
+                    <div class="cert-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Machine Learning with Python</h3>
+                    <p class="cert-issuer">Training Certificate</p>
+                    <span class="cert-date">September 2023</span>
+                    <a href="#" class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="cert-card" data-aos="flip-up" data-aos-delay="100">
+                    <div class="cert-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Analyzing and Visualizing Data with Microsoft Excel</h3>
+                    <p class="cert-issuer">Microsoft</p>
+                    <span class="cert-date">July 2025</span>
+                    <a href="#" class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="cert-card" data-aos="flip-up" data-aos-delay="200">
+                    <div class="cert-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Excel Workshop</h3>
+                    <p class="cert-issuer">Workshop Certificate</p>
+                    <span class="cert-date">August 2025</span>
+                    <a href="#" class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="cert-card" data-aos="flip-up" data-aos-delay="300">
+                    <div class="cert-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Data Analytics</h3>
+                    <p class="cert-issuer">Certificate of Data Analytics</p>
+                    <span class="cert-date">June 2025</span>
+                    <a href="#" class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+                <div class="title-underline"></div>
+                <p class="section-subtitle">Have a project in mind? Let's work together!</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <a href="mailto:nishantrounta63@gmail.com">nishantrounta63@gmail.com</a>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Phone</h3>
+                        <a href="tel:+919518608693">+91-9518608693</a>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Location</h3>
+                        <p>Yamuna Nagar, Haryana<br>135002, India</p>
+                    </div>
+                    <div class="contact-social">
+                        <h3>Connect With Me</h3>
+                        <div class="social-links-large">
+                            <a href="https://linkedin.com" target="_blank" class="social-btn linkedin">
+                                <i class="fab fa-linkedin-in"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="https://github.com" target="_blank" class="social-btn github">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-container" data-aos="fade-left">
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            <label for="name">Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                            <label for="subject">Subject</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="6" placeholder="Your Message" required></textarea>
+                            <label for="message">Message</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>NR</h2>
+                    <p>Data Analyst & Fullstack Developer</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Me</h3>
+                    <div class="footer-social-links">
+                        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="mailto:nishantrounta63@gmail.com"><i class="fas fa-envelope"></i></a>
+                        <a href="tel:+919518608693"><i class="fas fa-phone"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Nishant Rounte. All Rights Reserved.</p>
+                <p>Made with <i class="fas fa-heart"></i> and <i class="fas fa-code"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top" class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="main.js"></script>
+</body>
+</html>
